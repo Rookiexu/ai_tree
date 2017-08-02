@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<select name="自动攻击ai">
+		<Sequence name="是否有人">
+			<do neme = "do" class = "MonsterSearchTarget" />
+		</Sequence>
+		<Sequence name = "攻击目标">
+			<is name = "目标是否存活" class = "TargetIsAlive"/>
+			<Sequence name="攻击目标">
+				<Sequence name="攻击目标">
+					<is neme = "目标是否在攻击范围" class = "TargetIsAlive"/>
+					<do name = "攻击" class = "MonsterAttack"/>
+				</Sequence>
+				<do name = "追击目标" class = "MonsterChase"/>
+			</Sequence>
+		</Sequence>
+	</select>

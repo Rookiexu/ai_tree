@@ -2,5 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/myself/jdk/jarbao/dom4j/dom4j-2.0.1.jar" sourcepath="E:/myself/jdk/jarbao/dom4j/dom4j-2.0.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
