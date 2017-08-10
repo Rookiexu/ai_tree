@@ -1,6 +1,7 @@
 package cn.rookiex.xml;
 
 import java.io.File;
+import java.util.Iterator;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -29,6 +30,22 @@ public class XML {
 	    
 	    Element root = document.getRootElement();  
 	    System.out.println(root.getName());
+	    
+	    Iterator<Element> elementIterator = root.elementIterator();
+	    while(elementIterator.hasNext()){
+	    	Element next = elementIterator.next();
+	    	listNode(next);
+	    }
+	    
+	}
+	
+	public void listNode(Element node){	    
+		
+	    Iterator<Element> elementIterator = node.elementIterator();
+		 while(elementIterator.hasNext()){
+		    	Element next = elementIterator.next();
+		    	listNode(next);
+		    }
 	}
 	
 	public static void main(String[] args){
