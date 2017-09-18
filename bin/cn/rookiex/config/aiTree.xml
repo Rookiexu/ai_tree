@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<select  name="自动攻击ai" class = "Selector">
-		<Sequence  name="是否有人" class = "Sequence">
-			<do neme = "do" class = "AIAction" />
-		</Sequence>
-		<Sequence  name = "攻击目标" class = "Sequence">
-			<is name = "目标是否存活" class = "AIAction"/>
-			<Sequence  name="攻击目标"  class = "Sequence">
-				<Sequence  name="攻击目标"  class = "Sequence">
-					<is neme = "目标是否在攻击范围" class = "AIAction"/>
-					<do name = "攻击" class = "AIAction"/>
-				</Sequence>
-				<do name = "追击目标" class = "AIAction"/>
-			</Sequence>
-		</Sequence>
+<select name="女朋友ai" class="Selector">
+	<select name="送礼物" class="Selector">
+		<is name="isGood" class="IsGood">
+			<select name="good" class="Selector">
+				<is name="isBirthday" class="IsBirthday">
+					<do name="GrateHappy" class="GrateHappy" />
+				</is>
+				<do name="Happy" class="Happy" />
+			</select>
+			<select name="bad" class="Selector">
+				<is name="isBirthday" class="IsBirthday">
+					<do name="VeryHappy" class="VeryHappy" />
+				</is>
+				<do name="Happy" class="Happy" />
+			</select>
+		</is>
 	</select>
+
+	<select name="打电话" class="IsCall">
+		<Sequence name="good" class="Selector">
+			<is name="isGood" class="IsGood" />
+			<is name="isBirthday" class="AIAction">
+				<do name="VeryHappy" class="VeryHappy" />
+			</is>
+		</Sequence>
+		<do name="Happy" class="Happy" />
+	</select>
+
+	<select name="什么也没做" class="IsNotDoAnything">
+		<do name="verBadly" class="VerBadly" />
+	</select>
+</select>

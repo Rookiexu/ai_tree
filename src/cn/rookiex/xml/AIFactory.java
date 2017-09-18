@@ -20,10 +20,10 @@ import cn.rookiex.aiTree.Node;
  * @author rookiex
  *
  */
-public class XML2AI {
+public class AIFactory {
 
 	/**
-	 * ≥ı ºªØ∑Ω∑®,≥ı ºxml≈‰÷√
+	 * Ëß£Êûêxml‰∏∫aiÂØπË±°
 	 * @throws IllegalAccessException 
 	 * @throws InstantiationException 
 	 * @throws ClassNotFoundException 
@@ -61,8 +61,8 @@ public class XML2AI {
 	private Node Xml2Node(Element node) throws ClassNotFoundException, InstantiationException, 
 	IllegalAccessException{
 		StringBuffer className = new StringBuffer(64);
-		className.append("cn.rookiex.ai.");
-		//className.append("AI");
+		className.append("cn.rookiex.ai.node");
+		className.append("AI");
 		className.append(node.attribute("class").getValue());
 		return createNodeByName(className.toString());
 	}
@@ -93,8 +93,7 @@ public class XML2AI {
 	}
 	
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-		XML2AI xml = new XML2AI();
+		AIFactory xml = new AIFactory();
 		xml.init();
-		
 	}
 }

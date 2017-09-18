@@ -6,8 +6,7 @@ import java.util.Map;
 import com.google.common.collect.Maps;
 
 /**
- * AIÉÏĞĞÎÄÍâ²¿½Ó¿Ú
- * @author ËÎ²¨
+ * AIä¸Šè¡Œæ–‡å¤–éƒ¨æ¥å£
  *
  */
 public final class AIContext {
@@ -15,18 +14,18 @@ public final class AIContext {
 	private Map<Object, Object> properties = Maps.newConcurrentMap();
 	
 	/**
-	 * Ìí¼ÓAIĞĞÎªÏà¹Ø¶ÔÏó
-	 * @param key ×Ô¶¨ÒåÀàĞÍ
-	 * @param value ¶ÔÏó
+	 * æ·»åŠ AIè¡Œä¸ºç›¸å…³å¯¹è±¡
+	 * @param key è‡ªå®šä¹‰ç±»å‹
+	 * @param value å¯¹è±¡
 	 */
 	public void addProperty (Object key, Object value) {
 		properties.put(key, value);
 	}
 	
 	/**
-	 * »ñÈ¡AIĞĞÎªÏà¹Ø¶ÔÏó
-	 * @param key ×Ô¶¨ÒåÀàĞÍ
-	 * @return AIÏà¹Ø¶ÔÏó
+	 * è·å–AIè¡Œä¸ºç›¸å…³å¯¹è±¡
+	 * @param key è‡ªå®šä¹‰ç±»å‹
+	 * @return AIç›¸å…³å¯¹è±¡
 	 */
 	public Object getProperty (Object key) {
 		return properties.get(key);

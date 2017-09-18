@@ -1,49 +1,33 @@
 package cn.rookiex.ai;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.rookiex.aiTree.AIContext;
 import cn.rookiex.aiTree.Node;
+import cn.rookiex.constant.Contsant;
 
-public  class Selector implements Node {
+public class Selector implements Node {
 
-	private List<Node> son = new ArrayList<>();
-
-	/**选择节点执行逻辑**/
+	/** 閫夋嫨鑺傜偣鎵ц閫昏緫 **/
 	@Override
-	public int excute(AIContext context){
-		int size = son.size();
+	public int excute(AIContext context) {
+		int size = sonNode.size();
 		for (int i = 0; i < size; i++) {
-			int ecResult = son.get(0).excute(context);
-			//如果子节点返回正确或者运行中,向父节点返回正确或运行中
-			if (ecResult == 1 || ecResult == 2) {
+			int ecResult = sonNode.get(i).excute(context);
+			// 濡傛灉瀛愯妭鐐硅繑鍥炴纭垨鑰呰繍琛屼腑,鍚戠埗鑺傜偣杩斿洖姝ｇ‘鎴栬繍琛屼腑
+			if (ecResult == Contsant.IS_TRUE || ecResult == Contsant.IS_RUN) {
 				return ecResult;
 			}
 		}
-		//如果全部返回失败,向父节点返回失败
-		return 0;
+		// 濡傛灉鍏ㄩ儴杩斿洖澶辫触,鍚戠埗鑺傜偣杩斿洖澶辫触
+		return Contsant.IS_FALSE;
 	}
-	
-	/**顺序节点执行逻辑**/
-	public int ec2(AIContext context) {
-		int size = son.size();
-		for (int i = 0; i < size; i++) {
-			int ecResult = son.get(0).excute(context);
-			//如果子节点返回错误或者运行中,向父节点返回错误或运行中
-			if (ecResult == 0 || ecResult == 1) {
-				return ecResult;
-			}
-		}
-		//如果全部返回正确,向父节点返回正确
-		return 1;
-	}
-	
+
 	public List<Node> getSon() {
-		return son;
+		return sonNode;
 	}
 
 	public void addSon(Node son) {
-		this.son.add(son);
+		sonNode.add(son);
 	}
 }
