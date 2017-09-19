@@ -3,17 +3,11 @@ package cn.rookiex.xml;
 import java.io.File;
 import java.util.Iterator;
 
-import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
-import cn.rookiex.ai.Selector;
-import cn.rookiex.ai.Sequence;
-import cn.rookiex.aiTree.AIContext;
-import cn.rookiex.aiTree.AIExcutor;
-import cn.rookiex.aiTree.AILeaf;
 import cn.rookiex.aiTree.Node;
 
 /**
@@ -61,21 +55,11 @@ public class AIFactory {
 	private Node Xml2Node(Element node) throws ClassNotFoundException, InstantiationException, 
 	IllegalAccessException{
 		StringBuffer className = new StringBuffer(64);
-		className.append("cn.rookiex.ai.node");
+		className.append("cn.rookiex.ai.");
 		className.append("AI");
 		className.append(node.attribute("class").getValue());
 		return createNodeByName(className.toString());
 	}
-	
-//	@SuppressWarnings("unused")
-//	private Node createNodeByName(String name) {
-//		if(name == "Selector"){
-//			return new Selector();
-//		}else if(name == "Sequence"){
-//			return new Sequence();
-//		}
-//		return null;
-//	}
 
 	private Node createNodeByName (String nodeName) 
 			throws ClassNotFoundException, 

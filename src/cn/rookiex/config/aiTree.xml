@@ -18,8 +18,8 @@
 		</is>
 	</select>
 
-	<select name="打电话" class="IsCall">
-		<Sequence name="good" class="Selector">
+	<select name="打电话" class="Selector">
+		<Sequence name="good" class="Sequence">
 			<is name="isGood" class="IsGood" />
 			<is name="isBirthday" class="AIAction">
 				<do name="VeryHappy" class="VeryHappy" />

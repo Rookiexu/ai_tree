@@ -6,7 +6,7 @@ import cn.rookiex.aiTree.AIContext;
 import cn.rookiex.aiTree.Node;
 import cn.rookiex.constant.Contsant;
 
-public class Sequence implements Node {
+public class AISequence implements Node {
 
 	
 	public List<Node> getSon() {

@@ -4,7 +4,7 @@ import cn.rookiex.aiTree.AIContext;
 import cn.rookiex.aiTree.Node;
 import cn.rookiex.constant.Contsant;
 
-public abstract class Condition implements Node {
+public abstract class AICondition implements Node {
 
 	@Override
 	public int excute(AIContext context) {

@@ -1,9 +1,8 @@
-package cn.rookiex.ai.node;
+package cn.rookiex.ai;
 
-import cn.rookiex.ai.Condition;
 import cn.rookiex.aiTree.AIContext;
 
-public class AIIsBirthday extends Condition{
+public class AIIsBirthday extends AICondition{
 
 	@Override
 	public boolean is(AIContext context) {

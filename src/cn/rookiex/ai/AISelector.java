@@ -6,7 +6,7 @@ import cn.rookiex.aiTree.AIContext;
 import cn.rookiex.aiTree.Node;
 import cn.rookiex.constant.Contsant;
 
-public class Selector implements Node {
+public class AISelector implements Node {
 
 	/** 选择节点执行逻辑 **/
 	@Override
