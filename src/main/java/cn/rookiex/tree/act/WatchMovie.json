@@ -1,0 +1,87 @@
+{
+  "act": "SelectorNode",
+  "node": [
+    {
+      "act": "SequenceNode",
+      "node": [
+        {
+          "act": "IsRich",
+          "need": {
+            "money": 20,
+            "energy": 10
+          }
+        },
+        {
+          "act": "AOtherwiseBNode",
+          "is": {
+            "act": "IsHere",
+            "here": 5
+          },
+          "planB": {
+            "act": "GoTo",
+            "targetName": "电影院",
+            "target": 5
+          },
+          "planA": {
+            "act": "WatchMovie",
+            "costTicks": 3,
+            "cost": {
+              "money": 20,
+              "energy": 10
+            }
+          }
+        }
+      ]
+    },
+    {
+      "act": "AOtherwiseBNode",
+      "is": {
+        "act": "IsRich",
+        "need": {
+          "energy": 60
+        }
+      },
+      "planA": {
+        "act": "AOtherwiseBNode",
+        "is": {
+          "act": "IsHere",
+          "here": 7
+        },
+        "planA": {
+          "act": "Get",
+          "add": {
+            "money": 30
+          },
+          "decr": {
+            "energy": 60
+          }
+        },
+        "planB": {
+          "act": "GoTo",
+          "targetName": "工地打工",
+          "target": 7
+        }
+      },
+      "planB": {
+        "act": "AOtherwiseBNode",
+        "is": {
+          "act": "IsHere",
+          "here": 0
+        },
+        "planA": {
+          "act": "Get",
+          "add": {
+            "energy": 5
+          }
+        },
+        "planB": {
+          "act": "GoTo",
+          "targetName": "回家休息",
+          "target": 0
+        }
+      }
+    }
+  ]
+}
+
+
